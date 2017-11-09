@@ -1,0 +1,26 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "leetcode write by JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunOpar/leetcode-js.git"
+  },
+  "keywords": [
+    "leetcode",
+    "JavaScript"
+  ],
+  "author": "sunopar <xygjsj@139.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sunOpar/leetcode-js/issues"
+  },
+  "homepage": "https://github.com/sunOpar/leetcode-js#readme",
+  "devDependencies": {
+    "jest": "^21.2.1"
+  }
+}

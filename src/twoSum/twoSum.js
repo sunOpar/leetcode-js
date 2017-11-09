@@ -1,7 +1,7 @@
 /**
- * 暴力搜索
- * @param {*} nums 
- * @param {*} target 
+ * 通过map将复杂度控制在O(n)
+ * @param {Array} nums 
+ * @param {Number} target 
  */
 const twoSum = (nums, target) => {
   const numsMap = new Map();
