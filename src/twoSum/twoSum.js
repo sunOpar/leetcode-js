@@ -4,16 +4,15 @@
  * @param {*} target 
  */
 const twoSum = (nums, target) => {
-  let result = [];
-  wrap: for (let i = 0; i < nums.length - 1; i++) {
-    for (let j = i + 1; j < nums.length; j++) {
-      if (nums[j] + nums[i] === target) {
-        result = [i, j];
-        break wrap;
-      }
+  const numsMap = new Map();
+  for (let index = 0; index < nums.length; index++) {
+    const element = nums[index];
+    const anotherIndex = numsMap.get(target - element);
+    if (typeof anotherIndex !== 'undefined') {
+      return [index, anotherIndex];
     }
+    numsMap.set(element, index);
   }
-  return result;
 };
 
 module.exports = twoSum;
