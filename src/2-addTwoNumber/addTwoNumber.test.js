@@ -19,7 +19,7 @@ const createListNode = arrays => {
   }
   return listNode;
 };
-describe.only('addTwoNumber', () => {
+describe('addTwoNumber', () => {
   test('addTwoNumber', () => {
     expect(
       addTwoNumber(createListNode([1, 2, 3]), createListNode([1, 2, 3]))
