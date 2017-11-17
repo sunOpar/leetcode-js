@@ -7,7 +7,6 @@ const findMedianSortedArrays = (nums1, nums2) => {
   const array = mergeSort(nums1.concat(nums2));
   const { length } = array;
   const middleIndex = Math.ceil(length / 2) - 1;
-  console.log(middleIndex);
   if (length % 2 === 0) {
     return (array[middleIndex] + array[middleIndex + 1]) / 2;
   }
