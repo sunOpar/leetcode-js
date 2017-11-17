@@ -4,7 +4,7 @@
  * @return {number}
  */
 const findMedianSortedArrays = (nums1, nums2) => {
-  const array = mergeSort(nums1.concat(nums2));
+  const array = mergeSort(nums1, nums2);
   const { length } = array;
   const middleIndex = Math.ceil(length / 2) - 1;
   if (length % 2 === 0) {
@@ -12,16 +12,7 @@ const findMedianSortedArrays = (nums1, nums2) => {
   }
   return array[middleIndex];
 };
-const mergeSort = nums => {
-  if (nums.length === 1) {
-    return nums;
-  }
-  const middleIndix = Math.floor(nums.length / 2);
-  const leftArray = nums.slice(0, middleIndix);
-  const rightArray = nums.slice(middleIndix, nums.length);
-  return merge(mergeSort(leftArray), mergeSort(rightArray));
-};
-const merge = (nums1, nums2) => {
+const mergeSort = (nums1, nums2) => {
   let i = 0,
     j = 0;
   const resultArray = [];
