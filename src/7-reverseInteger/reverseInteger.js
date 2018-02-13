@@ -1,22 +1,15 @@
-function reverseInteger(number) {
-  if (Math.abs(number) < 10) {
-    return number;
-  }
-  const strLikeNum = String(number);
-  let strLikeResult = '';
-  for (let i = strLikeNum.length - 1; i >= 0; i--) {
-    const element = strLikeNum[i];
-    if (Number.isNaN(+element)) {
-      strLikeResult = element + strLikeResult;
-    } else {
-      strLikeResult += element;
-    }
-  }
-  const result = Number(strLikeResult);
-  
-  if (result < -2147483648 || result > 2147483647) {
+function reverseInteger(x) {
+  const result =
+    parseInt(
+      Math.abs(x)
+        .toString()
+        .split('')
+        .reverse()
+        .join(''),
+    ) * Math.sign(x);
+  if (result > Math.pow(2, 31) - 1 || result < -Math.pow(2, 31)) {
     return 0;
   }
-  return Number(strLikeResult);
+  return result;
 }
 module.exports = reverseInteger;
