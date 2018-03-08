@@ -9,18 +9,23 @@ function longestCommonPrefix(strs) {
   if (strs.length === 1) {
     return strs[0]
   }
-  let commonPrefix = '';
-  let hasCommonPrefix = true;
-  let prefixIndex = 0;
-  do {
-    const firstElement = strs[0][prefixIndex] || '';
-    hasCommonPrefix = strs.every(item => item[prefixIndex] === firstElement);
-    if (hasCommonPrefix) {
-      // 如果strs为['','']，firstElement有可能为undefined
-      commonPrefix += firstElement || '';
+  const minLen = strs.reduce((prev, current) => {
+    return Math.min(prev, current.length)
+  }, Number.MAX_SAFE_INTEGER)
+  let low = 1;
+  let high = minLen;
+  while (low <= high) {
+    const middle = (low + high) / 2;
+    if (isCommonPrefix(strs, middle)) {
+      low = middle + 1;
+    } else {
+      high = middle - 1;
     }
-    prefixIndex++;
-  } while (hasCommonPrefix);
-  return commonPrefix;
+  }
+  return strs[0].substring(0, (low + high) / 2)
+}
+function isCommonPrefix(strs, index) {
+  const prefix = strs[0].substring(0, index);
+  return strs.every((item) => item.substring(0, index) === prefix)
 }
 module.exports = longestCommonPrefix;
