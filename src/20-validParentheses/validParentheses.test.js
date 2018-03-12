@@ -7,4 +7,4 @@ describe('longest common prefix', () => {
     expect(func('([)]')).toBe(false);
     expect(func('[(())]{}')).toBe(true);
   })
-})
+});
