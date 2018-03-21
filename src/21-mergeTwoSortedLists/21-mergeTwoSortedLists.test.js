@@ -7,7 +7,6 @@ function ListNode(val) {
 }
 function createList(arr) {
   var Node = new ListNode(arr.shift());
-  console.log(Node)
   arr.reduce((prev, current) => {
     prev.next = new ListNode(current);
     return prev.next
@@ -21,5 +20,8 @@ describe("merge Two Sorted Lists", () => {
     const b = createList([1, 3, 4]);
     const c = createList([1, 1, 2, 3, 4, 4]);
     expect(func(a, b)).toEqual(c);
+  });
+  test('boundary test', () => {
+    
   });
 });
