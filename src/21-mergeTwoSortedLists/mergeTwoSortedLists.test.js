@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/merge-two-sorted-lists/description/
-const func = require("./21-mergeTwoSortedLists.js");
+const func = require("./mergeTwoSortedLists.js");
 
 function ListNode(val) {
   this.val = val;
